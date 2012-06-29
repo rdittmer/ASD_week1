@@ -5,6 +5,7 @@ $(document).bind('pageinit', function(){
       submitHandler: function(){
         /* var data = $( ".teeForm" ).serializeArray();
 				localStorage.setItem( "teeForm", data );*/
+				
 				storeData();
       }
    });
@@ -71,6 +72,7 @@ function storeData( key )
 			alert( "You currently have no saved Tee Times. Auto add default Tee Times." );
 			autoFillData();
 		}
+		
 		var makeDiv  = document.createElement( 'div' );
 		makeDiv.setAttribute( "id", "items" );
 		var makeList = document.createElement( 'ul' );
@@ -140,9 +142,9 @@ function storeData( key )
 		
 		toggleControls( "off" );
 		
-		ge( 'Options' ).value = item.Options[1];
-		ge( 'reservist' ).value     = item.reservist[1];
-		ge( 'numberGames' ).value = item.numberGames[1];
+		$( '#Options' ).val( item.Options[1] );
+		$( '#reservist' ).val( item.reservist[1] );
+		$( '#numberGames' ).val( item.numberGames[1] );
 		var radios = document.forms[0].location;
 		for ( var i = 0; i < radios.length; i++ )
 		{
@@ -153,14 +155,11 @@ function storeData( key )
 			else if ( radios[i].value == "All 18" && item.location[1] == "All 18" )
 				radios[i].setAttribute( "checked", "checked" );
 		}
-		ge( 'gameDate' ).value       = item.date[1];
-		ge( 'notes' ).value     = item.notes[1];
+		$( '#gameDate' ).val( item.date[1] );
+		$( '#notes' ).val( item.notes[1] );
 		
-		save.removeEventListener( "click", storeData );
-		ge( 'submit' ).value    = "Edit Tee Time";
-		var editSubmit         = ge( 'submit' );
-		editSubmit.addEventListener( "click" );
-		editSubmit.key         = this.key;
+		thiskey         = this.key;
+		$( '#submit' ).on( "click", storeData( thiskey ) );
 	}
 	
 	function deleteItem()
@@ -183,18 +182,18 @@ function storeData( key )
 		switch( n )
 		{
 			case "on":
-				ge('teeForm').style.display      = "none";
-				ge('clearData').style.display    = "inline";
-				ge('displayData').style.display = "none";
-				//ge('addNew').style.display       = "inline";
+				$( '#teeForm' ).toggle( "hide" );
+				//$( '#clearData' ).toggle( "show" );
+				$( '#displayData' ).toggle( "hide" );
+				$( '#addNew' ).removeClass( "ui-disabled" );
 				break;
 				
 			case "off":
-				ge('teeForm').style.display       = "block";
-				ge('clearData').style.display     = "inline";
-				ge('displayData').style.display  = "inline";
-				//ge('addNew').style.display        = "none";
-				ge('items').style.display           = "none";
+				$( '#teeForm' ).toggle( "show" );
+				//$( '#clearData' ).toggle( "show" );
+				$( '#displayData' ).toggle( "show" );
+				$( '#addNew' ).addClass( "ui-disabled" );
+				$( '#items' ).toggle( "hide" );
 				break;
 				
 			default:
@@ -213,13 +212,17 @@ function storeData( key )
 		}
 	}
 	
+	function windowReload(){
+		window.location.reload();
+		return false;
+	}
+	
 	var locationValue;
 	//var errMessage = ge( 'errors' );
 	//makeOptions();
 	
-	var displayLink = ge( 'displayData' );
-	displayLink.addEventListener( "click", getData );
-	var clearLink   = ge( 'clearData' );
-	clearLink.addEventListener( "click", clearLocal );
+	$( '#displayData' ).on( 'click', getData );
+	$( '#clearData'    ).on( 'click', clearLocal );
+	$( '#addNew'      ).on( 'click', windowReload );
 	//var save        = ge( 'submit' );
 	//save.addEventListener( "click", validate );
