@@ -3,12 +3,14 @@ $(document).bind('pageinit', function(){
    form.validate({
       invalidHandler: function(form, validator){},
       submitHandler: function(){
-         var data = $( ".teeForm" ).serializeArray();
-				localstorage.setItem( "teeForm", data );
+        /* var data = $( ".teeForm" ).serializeArray();
+				localStorage.setItem( "teeForm", data );*/
+				storeData();
       }
    });
 });
 
+//no longer needed due to jquery
 function ge( x ){
 		var theElement = document.getElementById( x );
 		return theElement;
@@ -24,22 +26,23 @@ function storeData( key )
 		{
 			id         = key;
 		}
-		getSelectedRadio();
-		var opts = getOptions();
+		//getSelectedRadio();
+		//var opts = getOptions();
 		var item       = {};
 		
-		item.Options           = ["Course:"  ,                opts];
-		item.reservist          = ["Reservist:"     ,          ge( 'reservist' ).value];
-		item.numberGames = ["Number of Games:" , ge( 'numberGames' ).value];
-		item.location           = ["Location:"   ,             locationValue];
-		item.date                = ["Date:"   ,       			   ge( 'date' ).value];
-		item.notes              = ["Notes"       ,              ge( 'notes' ).value];
+		item.Options           = ["Course:"  ,                $( '#Options' ).val()];
+		item.reservist          = ["Reservist:"     ,          $( '#reservist' ).val()];
+		item.numberGames = ["Number of Games:" , $( '#numberGames' ).val()];
+		item.location           = ["Location:"   ,             $('input[name=location]:checked', '#teeForm').val()];
+		item.date                = ["Date:"   ,       			   $( '#date' ).val()];
+		item.notes              = ["Notes"       ,              $( '#notes' ).val()];
 		
 		localStorage.setItem( id, JSON.stringify( item ) );
 		alert( "Tee Time Added!" );
 	}
 	
-	function getSelectedRadio()
+	// No longer needed due to jquery
+	/*function getSelectedRadio()
 	{
 		var radios = document.forms[0].location;
 		
@@ -58,7 +61,7 @@ function storeData( key )
     		  };
    		};
   		 return optionValue;
-	};
+	};*/
 	
 	function getData()
 	{
@@ -183,14 +186,14 @@ function storeData( key )
 				ge('teeForm').style.display      = "none";
 				ge('clearData').style.display    = "inline";
 				ge('displayData').style.display = "none";
-				ge('addNew').style.display       = "inline";
+				//ge('addNew').style.display       = "inline";
 				break;
 				
 			case "off":
 				ge('teeForm').style.display       = "block";
 				ge('clearData').style.display     = "inline";
 				ge('displayData').style.display  = "inline";
-				ge('addNew').style.display        = "none";
+				//ge('addNew').style.display        = "none";
 				ge('items').style.display           = "none";
 				break;
 				

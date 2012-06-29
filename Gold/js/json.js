@@ -4,7 +4,7 @@ var json = {
 		"reservist":     ["Reservist:", "Jerry Malk"],
 		"numberGames": ["Number of Games:", "1"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/11/2012"],
+		"date":   ["Date:", "06/11/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time2":{
@@ -12,7 +12,7 @@ var json = {
 		"reservist":     ["Reservist:", "Tim Caldwell"],
 		"numberGames": ["Number of Games:", "3"],
 		"location":   ["Location:", "Front 9"],
-		"date":   ["Game Date:", "06/02/2012"],
+		"date":   ["Date:", "06/02/2012"],
 		"notes":     ["Notes:", "Need a golf cart"]
 	},
 	"Time3":{
@@ -20,7 +20,7 @@ var json = {
 		"reservist":     ["Reservist:", "Sarah Washington"],
 		"numberGames": ["Number of Games:", "1"],
 		"location":   ["Location:", "Back 9"],
-		"date":   ["Game Date:", "06/20/2012"],
+		"date":   ["Date:", "06/20/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time4":{
@@ -28,7 +28,7 @@ var json = {
 		"reservist":     ["Reservist:", "Amy Chung"],
 		"numberGames": ["Number of Games:", "2"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/11/2012"],
+		"date":   ["Date:", "06/11/2012"],
 		"notes":     ["Notes:", "caddy needed"]
 	},
 	"Time5":{
@@ -36,7 +36,7 @@ var json = {
 		"reservist":     ["Reservist:", "Stonelead Inc"],
 		"numberGames": ["Number of Games:", "6"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/15/2012"],
+		"date":   ["Date:", "06/15/2012"],
 		"notes":     ["Notes:", "6 parties, company outing"]
 	},
 	"Time6":{
@@ -44,7 +44,7 @@ var json = {
 		"reservist":     ["Reservist:", "Jim Pear"],
 		"numberGames": ["Number of Games:", "1"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/08/2012"],
+		"date":   ["Date:", "06/08/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time7":{
@@ -52,7 +52,7 @@ var json = {
 		"reservist":     ["Reservist:", "Perry Wrinkler"],
 		"numberGames": ["Number of Games:", "1"],
 		"location":   ["Location:", "Front 9"],
-		"date":   ["Game Date:", "06/18/2012"],
+		"date":   ["Date:", "06/18/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time8":{
@@ -60,7 +60,7 @@ var json = {
 		"reservist":     ["Reservist:", "Sherry Mcdonald"],
 		"numberGames": ["Number of Games:", "6"],
 		"location":   ["Location:", "Front 9"],
-		"date":   ["Game Date:", "06/27/2012"],
+		"date":   ["Date:", "06/27/2012"],
 		"notes":     ["Notes:", "birthday party"]
 	},
 	"Time9":{
@@ -68,7 +68,7 @@ var json = {
 		"reservist":     ["Reservist:", "Jack Terry"],
 		"numberGames": ["Number of Games:", "2"],
 		"location":   ["Location:", "Back 9"],
-		"date":   ["Game Date:", "06/20/2012"],
+		"date":   ["Date:", "06/20/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time10":{
@@ -76,7 +76,7 @@ var json = {
 		"reservist":     ["Reservist:", "Uma Grieg"],
 		"numberGames": ["Number of Games:", "2"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/22/2012"],
+		"date":   ["Date:", "06/22/2012"],
 		"notes":     ["Notes:", "practice for tournament"]
 	},
 	"Time11":{
@@ -84,7 +84,7 @@ var json = {
 		"reservist":     ["Reservist:", "Will Crameck"],
 		"numberGames": ["Number of Games:", "1"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/05/2012"],
+		"date":   ["Date:", "06/05/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time12":{
@@ -92,7 +92,7 @@ var json = {
 		"reservist":     ["Reservist:", "Mohammed Sherik"],
 		"numberGames": ["Number of Games:", "3"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/15/2012"],
+		"date":   ["Date:", "06/15/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time13":{
@@ -100,7 +100,7 @@ var json = {
 		"reservist":     ["Reservist:", "Kay Liemer"],
 		"numberGames": ["Number of Games:", "2"],
 		"location":   ["Location:", "Back 9"],
-		"date":   ["Game Date:", "06/18/2012"],
+		"date":   ["Date:", "06/18/2012"],
 		"notes":     ["Notes:", "caddy and golf cart needed"]
 	},
 	"Time14":{
@@ -108,7 +108,7 @@ var json = {
 		"reservist":     ["Reservist:", "Berry Igram"],
 		"numberGames": ["Number of Games:", "1"],
 		"location":   ["Location:", "Back 9"],
-		"date":   ["Game Date:", "06/03/2012"],
+		"date":   ["Date:", "06/03/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time15":{
@@ -116,7 +116,7 @@ var json = {
 		"reservist":     ["Reservist:", "Stanley Graham"],
 		"numberGames": ["Number of Games:", "2"],
 		"location":   ["Location:", "Front 9"],
-		"date":   ["Game Date:", "06/09/2012"],
+		"date":   ["Date:", "06/09/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time16":{
@@ -124,7 +124,7 @@ var json = {
 		"reservist":     ["Reservist:", "Alex Gourd"],
 		"numberGames": ["Number of Games:", "1"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/14/2012"],
+		"date":   ["Date:", "06/14/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time17":{
@@ -132,7 +132,7 @@ var json = {
 		"reservist":     ["Reservist:", "Kevin Orga"],
 		"numberGames": ["Number of Games:", "1"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/22/2012"],
+		"date":   ["Date:", "06/22/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time18":{
@@ -140,7 +140,7 @@ var json = {
 		"reservist":     ["Reservist:", "Kim Heriech"],
 		"numberGames": ["Number of Games:", "4"],
 		"location":   ["Location:", "Front 9"],
-		"date":   ["Game Date:", "06/12/2012"],
+		"date":   ["Date:", "06/12/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time19":{
@@ -148,7 +148,7 @@ var json = {
 		"reservist":     ["Reservist:", "Eric Cloud"],
 		"numberGames": ["Number of Games:", "3"],
 		"location":   ["Location:", "Back 9"],
-		"date":   ["Game Date:", "06/25/2012"],
+		"date":   ["Date:", "06/25/2012"],
 		"notes":     ["Notes:", "none"]
 	},
 	"Time20":{
@@ -156,7 +156,7 @@ var json = {
 		"reservist":     ["Reservist:", "Chuck Jear"],
 		"numberGames": ["Number of Games:", "2"],
 		"location":   ["Location:", "All 18"],
-		"date":   ["Game Date:", "06/13/2012"],
+		"date":   ["Date:", "06/13/2012"],
 		"notes":     ["Notes:", "none"]
 	}
 }

@@ -47,6 +47,7 @@ window.addEventListener( "DOMContentLoaded", function(){
 		item.notes              = ["Notes"       ,               ge( 'notes' ).value];
 		
 		localStorage.setItem( id, JSON.stringify( item ) );
+		console.log(localStorage);
 		alert( "Tee Time Added!" );
 	}
 
