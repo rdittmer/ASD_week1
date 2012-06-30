@@ -5,17 +5,16 @@ $(document).bind('pageinit', function(){
       submitHandler: function(){
         /* var data = $( ".teeForm" ).serializeArray();
 				localStorage.setItem( "teeForm", data );*/
-				
 				storeData();
       }
    });
 });
 
 //no longer needed due to jquery
-function ge( x ){
+/*function ge( x ){
 		var theElement = document.getElementById( x );
 		return theElement;
-	}
+	}*/
 
 function storeData( key )
 	{
@@ -34,7 +33,7 @@ function storeData( key )
 		item.Options           = ["Course:"  ,                $( '#Options' ).val()];
 		item.reservist          = ["Reservist:"     ,          $( '#reservist' ).val()];
 		item.numberGames = ["Number of Games:" , $( '#numberGames' ).val()];
-		item.location           = ["Location:"   ,             $('input[name=location]:checked', '#teeForm').val()];
+		item.location           = ["Location:"   ,             $( 'input[name=location]:checked', '#teeForm' ).val()];
 		item.date                = ["Date:"   ,       			   $( '#date' ).val()];
 		item.notes              = ["Notes"       ,              $( '#notes' ).val()];
 		
@@ -73,32 +72,39 @@ function storeData( key )
 			autoFillData();
 		}
 		
-		var makeDiv  = document.createElement( 'div' );
-		makeDiv.setAttribute( "id", "items" );
-		var makeList = document.createElement( 'ul' );
-		makeDiv.appendChild( makeList );
-		document.body.appendChild( makeDiv );
-		ge( 'items' ).style.display = "block";
+		$( '#addItemContent' ).append( '<div id="items" /> ' );
+		//var makeDiv  = document.createElement( 'div' );
+		//makeDiv.setAttribute( "id", "items" );
+		$( '#items' ).append( '<ul id="makeList" /> ' );
+		//var makeList = document.createElement( 'ul' );
+		//makeDiv.appendChild( makeList );
+		//document.body.appendChild( makeDiv );
+		//ge( 'items' ).style.display = "block";
 		for( var i = 0, len = localStorage.length; i < len; i++ )
 		{
-			var makeli      = document.createElement( 'li' );
-			var linksLi     = document.createElement( 'li' );
-			makeList.appendChild( makeli );
+			$( '#makeList' ).append( '<li /> ' );
+			//var makeli      = document.createElement( 'li' );
+			///////////////////////////////////////////////////////////////////////////////var linksLi     = document.createElement( 'li' );
+			//makeList.appendChild( makeli );
 			var key         = localStorage.key( i );
 			var value       = localStorage.getItem( key );
 			var obj         = JSON.parse( value );
-			var makeSubList = document.createElement( 'ul' );
-			makeli.appendChild( makeSubList );
+			$( '#makeList li' ).last().append( '<ul id="makeSubList" /> ' );
+ 			//var makeSubList = document.createElement( 'ul' );
+			//makeli.appendChild( makeSubList );
 			//getImage( obj.Options[1], makeSubList );
 			for( var n in obj )
 			{
-				var makeSubli       = document.createElement( 'li' );
-				makeSubList.appendChild( makeSubli );
+				$( '#makeSubList' ).append( '<li />' );
+				//var makeSubli       = document.createElement( 'li' );
+				//makeSubList.appendChild( makeSubli );
 				var optSubText      = obj[n][0] + " " + obj[n][1];
-				makeSubli.innerHTML = optSubText;
-				makeSubList.appendChild( linksLi );
+				$( '#makeSubList li' ).last().append( optSubText );
+				//makeSubli.innerHTML = optSubText;
+				$( '#li' ).last().append( '<li id="linksLi" /> ' );
+				//makeSubList.appendChild( linksLi );
 			} 
-			makeItemLinks( localStorage.key( i ), linksLi );
+			makeItemLinks( localStorage.key( i ), $( '#linksLi' ) );
 			//$('#additem').page.refresh();
 		}
 	}
@@ -119,20 +125,20 @@ function storeData( key )
 		editLink.href        = "#";
 		editLink.key         = key;
 		var editText         = "Edit Tee Times";
-		editLink.addEventListener( "click", editItem );
-		editLink.innerHTML   = editText;
-		linksLi.appendChild( editLink );
+		$( '#editLink').on( "click", editItem );
+		$( '#editLink' ).html( "editText" );
+		$( '#linksLi' ).append( "editLink" );
 		
 		var breakTag         = document.createElement( 'br' );
-		linksLi.appendChild( breakTag );
+		$( '#linksLi' ).append( "breakTag" );
 		
 		var deleteLink       = document.createElement( 'n' );
 		deleteLink.href      = "#";
 		deleteLink.key       = key;
 		var deleteText       = "Delete Tee Time";
-		deleteLink.addEventListener( "click", deleteItem );
-		deleteLink.innerHTML = deleteText;
-		linksLi.appendChild( deleteLink );
+		$( '#deleteLink' ).on( "click", deleteItem );
+		$( '#deleteLink' ).html( "deleteText" );
+		$( '#linksLi' ).append( "deleteLink" );
 	}
 	
 	function editItem()
@@ -159,7 +165,7 @@ function storeData( key )
 		$( '#notes' ).val( item.notes[1] );
 		
 		thiskey         = this.key;
-		$( '#submit' ).on( "click", storeData( thiskey ) );
+		$( '#submit' ).on( 'click', storeData( thiskey ) );
 	}
 	
 	function deleteItem()
